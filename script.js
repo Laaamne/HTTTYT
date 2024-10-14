@@ -1,46 +1,108 @@
-// Xử lý đăng nhập
-document.getElementById("login-btn").addEventListener("click", function() {
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
+/* Định dạng chung */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    if (username === "admin" && password === "1") {
-        document.getElementById("login-container").style.display = "none";
-        document.getElementById("main-container").style.display = "block";
-    } else {
-        document.getElementById("error-msg").textContent = "Tài khoản hoặc mật khẩu không đúng!";
-    }
-});
+/* Màn hình đăng nhập */
+#login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
 
-// Xử lý chuyển trang
-document.getElementById("profile-link").addEventListener("click", function() {
-    document.getElementById("content").innerHTML = `
-        <h2>Hồ sơ bệnh nhân</h2>
-        <p>Họ và tên: Nguyễn Văn A</p>
-        <p>Ngày sinh: 01/01/1980</p>
-        <p>Giới tính: Nam</p>
-        <p>Địa chỉ: 123 Đường ABC, TP.HCM</p>
-    `;
-});
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
 
-document.getElementById("messages-link").addEventListener("click", function() {
-    document.getElementById("content").innerHTML = `
-        <h2>Tin nhắn chờ</h2>
-        <p>Không có tin nhắn chờ.</p>
-    `;
-});
+form {
+    display: flex;
+    flex-direction: column;
+}
 
-document.getElementById("conditions-link").addEventListener("click", function() {
-    document.getElementById("content").innerHTML = `
-        <h2>Bệnh lý của tôi</h2>
-        <p>Tên bệnh: Viêm phổi</p>
-        <p>Tên thuốc đã kê đơn: Amoxicillin</p>
-        <p>Tiền sử dị ứng: Không có</p>
-    `;
-});
+label {
+    margin-bottom: 5px;
+    color: #555;
+}
 
-document.getElementById("appointments-link").addEventListener("click", function() {
-    document.getElementById("content").innerHTML = `
-        <h2>Lịch hẹn của tôi</h2>
-        <p>Ngày hẹn khám: 15/10/2024</p>
-    `;
-});
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 30px;
+    background-color: #2835a7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #214588;
+}
+
+#error-msg {
+    margin-top: 10px;
+}
+
+/* Giao diện chính */
+#main-container {
+    width: 80%;
+    margin-top: 20px;
+}
+
+nav {
+    background-color: #007bff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+
+#content {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 20px;
+}
